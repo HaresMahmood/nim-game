@@ -50,6 +50,8 @@ def successor(state, index, amount, isList = True):
     if piles[index] < 1: # If removing sticks from the pile results in the pile having a negative or `0` value, ...
         piles.pop(index) # Remove pile from state.
 
+    piles.sort()
+
     state = list(state) # Convert tuple to list.
     state[0] = piles.copy() if isList else tuple(piles) # Add list of piles to tuple.
     state = tuple(state) # Convert list back to tuple.
@@ -115,4 +117,4 @@ def minimax_value(state, alpha = -float('inf'), beta = float('inf')):
 
         if (state[1] == 1 and alpha >= beta) or (state[1] == 2 and beta <= alpha): break # Prune based on whether `alpha` or `beta` is bigger, depending on whether `c` is a Max- or Min-state.
 
-    return value, path # Return Minimax-value, along with the path.
+    return value, path # Return Minimax-value, along with the path. 
