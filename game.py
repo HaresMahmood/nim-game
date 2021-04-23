@@ -1,3 +1,26 @@
+"""
+`game.py`:
+Command-line interface, represents a game of misère Nim.
+AI can be modified to user minimax or MCTS.
+Game states are represented in the following way:
+   * [x, y, z]
+      - Where `x`, `y` and `z` are the number of sticks in their
+      respective pile, being the index at which they are present
+      in the list.
+
+Rules:
+   * `x` number of piles with a random number of sticks is
+   generated at the start of the game, where `x` is determined
+   by the user.
+   * The user chooses whether they want to start or not 
+   (Player 1 or Player 2).
+   * Once the game starts, each player can take up to 3 sticks at
+   once from a single pile.
+   * The player that has to take the last stick loses.
+"""
+
+__author__ = "Hares Mahmood"
+
 import random # Import `random` module.
 import minimax as nim # Import minimax functions.
 import montecarlo as mc # import monte carlo functions.

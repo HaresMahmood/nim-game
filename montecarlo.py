@@ -1,3 +1,16 @@
+"""
+`montecarlo.py`:
+General-purpose Monte Carlo Search Tree "algorithm".
+Uses some functions from `minimax.py` for actions specific
+to the game of Nim.
+
+MCTS does not have time complexity, because the search can
+be stopped at any time, and by default only runs for a 
+certain amount of iterations.
+"""
+
+__author__ = "Hares Mahmood"
+
 import random # Import `random` module.
 import math # Import `math` module.
 from collections import defaultdict # Import `defaultdict` module, to avoid having to check if item is in dictionary or not.

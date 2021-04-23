@@ -1,28 +1,19 @@
 """
-Pseudo code (https://en.wikipedia.org/wiki/Alpha-beta_pruning#Pseudocode):
-function minimax(state, alpha, betal isMax) is
-    if terminal(state) then
-        return utility(state)
+`minimax.py`:
+Minimax algorithm with alpha-beta pruning.
+Contains `successor`-function specifically for game of Nim.
+Minimax algorithm is pretty much general purpose.
 
-    multiplier = isMax ? -1 : 1
-    value := multiplier * ∞
-
-    for c in successors(states) do
-        value := isMax ? max(value, minimax(c, alpha, beta, !isMax)) : min(value, minimax(c, alpha, beta, !isMax))
-
-        if (isMax) then
-            alpha = max(alpha, value)
-
-            if (alpha >= beta) then
-                break
-        else
-            beta = min(beta, value)
-
-            if (beta <= alpha) then
-                break
-
-    return value
+Time complexity: 
+   * Worst-case: O(b^d)
+      - Same as regular minimax, every single node is visited.
+   * Best-case: O(b^(d/2))
+      - Approximately half the search tree is pruned.
+   Where `b` is the number of children of every node and
+   `d` is the depth of the tree.
 """
+
+__author__ = "Hares Mahmood"
 
 """
     Switches a Max-state to a Min-state, and vice versa.
